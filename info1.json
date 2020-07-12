@@ -1,0 +1,1417 @@
+[
+	{ "db_name": "product_type", "name": "推广目标", "desc": "你希望通过广告实现的营销目标。", "ad_level": "all" },
+	{
+		"db_name": "contract_flag",
+		"name": "购买类型",
+		"desc": "指通过合约或竞价购买（区分cpm，cpc，ocpm…），购买类型决定了如何支付广告费用和设置广告目标受众。",
+		"ad_level": "all"
+	},
+	{ "db_name": "pos_type", "name": "广告位", "desc": "广告展现的位置。", "ad_level": "all" },
+	{ "db_name": "material_preview", "name": "创意预览", "desc": "计划包含的创意", "ad_level": "all" },
+	{ "db_name": "cname", "name": "所属计划", "desc": "广告所属的计划", "ad_level": "ad_group" },
+	{ "db_name": "aname", "name": "所属广告", "desc": "创意所属的广告", "ad_level": "creative" },
+	{ "db_name": "begin_time,end_time", "name": "投放时间", "desc": "广告投放开始和结束时间", "ad_level": "all" },
+	{ "db_name": "status", "name": "状态", "desc": "广告、创意目前的投放状态。", "ad_level": "ad_group|creative" },
+	{
+		"db_name": "expand_targeting_switch",
+		"name": "自动扩量",
+		"desc": "广告是否勾选了自动扩量的能力，计划是否包含了勾选自动扩量能力的广告",
+		"ad_level": "plan|ad_group"
+	},
+	{
+		"db_name": "agency_name",
+		"name": "服务商名称",
+		"desc": "如果计划或广告是服务商创建的，展示对应服务商的名称；如果是广告主自己创建的，展示“--”",
+		"ad_level": "plan|ad_group"
+	},
+	{
+		"db_name": "bid_objective",
+		"name": "优化目标",
+		"desc": "预期用户因广告投放产生的操作行动（备注：该字段即将下线，针对ocpm广告，其优化目标可以参考“出价方式”，方便定位更具体的优化方向）",
+		"ad_level": "ad_group"
+	},
+	{
+		"db_name": "second_bid_objective",
+		"name": "深度优化目标",
+		"desc": "广告主深度优化方式选择“优化转化行为”后，选择的深度优化目标",
+		"ad_level": "ad_group"
+	},
+	{
+		"db_name": "deep_conversion_optimization_goal",
+		"name": "价值优化目标",
+		"desc": "广告主深度优化方式选择“优化转化价值”后，选择的ROI价值优化目标",
+		"ad_level": "ad_group"
+	},
+	{
+		"db_name": "exposure_score",
+		"name": "曝光评估",
+		"desc": "反映广告的综合曝光竞争力，得分越高表明赢取曝光机会的能力越强，移动鼠标至得分可展开具体详情\r\n注：该项数据反映最近4小时曝光竞争力情况，不代表投放以来的累计情况",
+		"ad_level": "plan|ad_group"
+	},
+	{
+		"db_name": "cpa_day_diff",
+		"name": "当日成本偏差",
+		"desc": "反映广告今日的实际成本与目标成本直接的差异，移动鼠标至偏差可展开具体详情  \r\n注：该项成本相关数据按小时更新，与实时更新的「转化目标成本」数据存在出入属于正常情况",
+		"ad_level": "plan|ad_group"
+	},
+	{
+		"db_name": "application_type",
+		"name": "应用类型",
+		"desc": "推广应用时，展示应用类型。包含：小游戏，Android 应用，iOS 应用。",
+		"ad_level": "plan|ad_group"
+	},
+	{
+		"db_name": "application_id",
+		"name": "应用id",
+		"desc": "当推广目标为推广我的应用/小游戏时，展示对应的应用id。\r\n安卓推广=App ID；IOS推广=应用ID；小游戏=原始ID",
+		"ad_level": "plan|ad_group"
+	},
+	{ "db_name": "day_budget", "name": "计划预算（元）", "desc": "投放计划设置的计划预算（元）", "ad_level": "plan" },
+	{
+		"db_name": "budget",
+		"name": "广告预算（元）",
+		"desc": "合约广告的投放预算，竞价广告的日投放预算",
+		"ad_level": "all"
+	},
+	{ "db_name": "bid_action_type", "name": "出价方式", "desc": "广告主出价方式选择", "ad_level": "ad_group" },
+	{ "db_name": "bid", "name": "当前出价（元）", "desc": "您为该广告设置的当前出价", "ad_level": "ad_group" },
+	{ "db_name": "bid_avg", "name": "平均出价（元）", "desc": "广告从上线至今的平均出价。", "ad_level": "ad_group" },
+	{
+		"db_name": "second_bid",
+		"name": "当前深度出价",
+		"desc": "竞价广告深度智能优化，当前的深度出价",
+		"ad_level": "ad_group"
+	},
+	{
+		"db_name": "bill_second_bid_avg",
+		"name": "平均深度出价（元）",
+		"desc": "广告从上线至今的平均深度出价。",
+		"ad_level": "ad_group"
+	},
+	{
+		"db_name": "deep_conversion_bid",
+		"name": "ROI目标值",
+		"desc": "广告主为深度优化转化价值的广告设定的ROI目标值",
+		"ad_level": "ad_group"
+	},
+	{ "db_name": "paid", "name": "花费（元）", "desc": "广告的花费金额。", "ad_level": "all" },
+	{
+		"db_name": "auto_compensate_money",
+		"name": "赔付金额",
+		"desc": "智能优化成本保障政策下，广告超成本时的赔付金额",
+		"ad_level": "plan|ad_group"
+	},
+	{ "db_name": "exp_pv", "name": "曝光次数", "desc": "用户观看广告的次数。", "ad_level": "all" },
+	{ "db_name": "ecpm", "name": "千次曝光成本", "desc": "平均每千次曝光的花费", "ad_level": "all" },
+	{ "db_name": "exp_uv", "name": "曝光人数", "desc": "观看广告的独立用户数。", "ad_level": "all" },
+	{ "db_name": "exp_pv_avg", "name": "人均曝光次数", "desc": "每个用户观看广告的平均次数。", "ad_level": "all" },
+	{
+		"db_name": "special_h5_exp_pv",
+		"name": "指定页面曝光人数",
+		"desc": "用户通过广告进入跳转向指定页面曝光的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "special_h5_exp_cost",
+		"name": "指定页面曝光成本（元）",
+		"desc": "广告花费/指定页面曝光人数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "clk_pv",
+		"name": "点击次数",
+		"desc": "用户在广告外层进行点击操作的次数。包括点击图片/视频，及朋友圈广告“文字链、头像、昵称、门店、选择按钮”等所有广告外层区域的点击。",
+		"ad_level": "all"
+	},
+	{ "db_name": "clk_uv", "name": "点击人数", "desc": "在广告外层进行点击操作的独立用户数。", "ad_level": "all" },
+	{
+		"db_name": "ctr",
+		"name": "点击率",
+		"desc": "看到广告后执行点击操作的百分比。计算逻辑：广告点击次数/广告曝光次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cpc",
+		"name": "点击均价（元）",
+		"desc": "一次广告点击的平均花费。计算逻辑：广告花费/广告点击次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "convclk_pv",
+		"name": "可转化点击次数",
+		"desc": "朋友圈：可转化点击是指可能产生转化的外层点击次数。对于“公众号推广”的广告，包括外层的公众号头像、公众号昵称、详情页查看、原生推广页查看；\r\n\r\n对于其他类型的广告，包括外层的详情页查看和原生推广页查看。\r\n\r\n公众号：可转化点击是指可能产生转化的点击次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "convclk_pv_rate",
+		"name": "可转化点击率",
+		"desc": "用户看到广告后执行可转化点击操作的百分比。计算逻辑：广告可转化点击次数/广告曝光次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "convclk_cpc",
+		"name": "可转化点击成本",
+		"desc": "一次可转化点击的平均花费。计算逻辑：广告花费/可转化点击次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "img_pv",
+		"name": "图片点击次数",
+		"desc": "用户点击朋友圈广告外层\"图片\"位置的总次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "img_uv",
+		"name": "图片点击人数",
+		"desc": "点击朋友圈广告外层\"图片\"位置的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "play_pv",
+		"name": "视频点击次数",
+		"desc": "用户点击朋友圈广告外层\"视频\"位置的总次数（包括手动点击播放、点击进入落地页或小视频全屏页）。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "play_uv",
+		"name": "视频点击人数",
+		"desc": "点击朋友圈广告外层\"视频\"位置的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "detail_pv",
+		"name": "文字链点击次数",
+		"desc": "用户点击朋友圈广告外层\"文字链\"位置的次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "detail_uv",
+		"name": "文字链点击人数",
+		"desc": "点击广告朋友圈广告外层“文字链”位置的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "head_pv",
+		"name": "头像点击次数",
+		"desc": "用户点击朋友圈广告外层“公众号头像”位置的总次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "head_uv",
+		"name": "头像点击人数",
+		"desc": "点击朋友圈广告外层“公众号头像”位置的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "nick_pv",
+		"name": "昵称点击次数",
+		"desc": "用户点击朋友圈广告外层“公众号昵称”位置的总次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "nick_uv",
+		"name": "昵称点击人数",
+		"desc": "点击朋友圈广告外层“公众号昵称”位置的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "poi_pv",
+		"name": "门店点击次数",
+		"desc": "用户点击朋友圈广告外层“门店”位置的总次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "poi_uv",
+		"name": "门店点击人数",
+		"desc": "用户点击朋友圈广告外层“门店”位置的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "action_btn_pv",
+		"name": "行动按钮点击次数",
+		"desc": "用户点击朋友圈广告外层\"行动按钮\"位置的次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "action_btn_uv",
+		"name": "行动按钮点击人数",
+		"desc": "点击朋友圈广告外层\"行动按钮\"位置的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cvs_exp_pv",
+		"name": "推广页曝光次数",
+		"desc": "推广页的曝光次数。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cvs_exp_uv",
+		"name": "推广页曝光人数",
+		"desc": "推广页的曝光的独立用户数。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cvs_exp_pv_rate",
+		"name": "推广页曝光率",
+		"desc": "用户看到广告后进入推广页的百分比。计算逻辑：推广页曝光次数/广告曝光次数。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cvs_exp_pv_avg",
+		"name": "推广页人均曝光次数",
+		"desc": "用户浏览推广页的平均次数。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cvs_viewtime_avg",
+		"name": "推广页人均曝光时长（秒）",
+		"desc": "用户浏览推广页的平均时长。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cpnclk_button_pv",
+		"name": "推广页按钮点击次数",
+		"desc": "推广页内按钮点击次数之和。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cpnclk_button_dedup_pv",
+		"name": "推广页按钮点击人数",
+		"desc": "点击推广页按钮的独立用户数。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "cpnclk_button_dedup_pv_cost",
+		"name": "推广页按钮点击成本（元）",
+		"desc": "产生一个推广页按钮点击用户的平均花费。计算逻辑：广告花费/推广页按钮点击人数\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "heart_pv",
+		"name": "点赞次数",
+		"desc": "用户在朋友圈广告点赞的总次数。\r\n推广页类型：可为原生推广页或小程序推广页，不包含自定义链接。",
+		"ad_level": "all"
+	},
+	{ "db_name": "heart_uv", "name": "点赞人数", "desc": "在朋友圈广告点赞的独立用户数。", "ad_level": "all" },
+	{ "db_name": "comment_pv", "name": "评论次数", "desc": "用户在朋友圈广告评论的总次数。", "ad_level": "all" },
+	{ "db_name": "comment_uv", "name": "评论人数", "desc": "在朋友圈广告评论的独立用户数。", "ad_level": "all" },
+	{
+		"db_name": "comindex_name",
+		"name": "转化目标",
+		"desc": "平台推荐，用来监测广告转化效果的指标\r\n\r\n不同类型广告的「转化目标」定义不同，点击查看<a href=\"https://ad.weixin.qq.com/guide/1230\" target=\"_blank\">映射表</a>\r\n\r\n该指标于19/8/30升级发布，覆盖了更多类型广告的转化效果指标。部分需接入 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">转化跟踪</a>后可统计",
+		"ad_level": "ad_group"
+	},
+	{
+		"db_name": "conv_index",
+		"name": "转化目标量",
+		"desc": "「转化目标」的具体数量，代表该广告的转化效果量级。\r\n\r\n不同类型广告的「转化目标」定义不同，点击查看<a href=\"https://ad.weixin.qq.com/guide/1230\" target=\"_blank\">映射表</a>\r\n\r\n该指标于19/8/30升级发布，覆盖了更多类型广告的转化效果指标。部分需接入 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">转化跟踪</a>后可统计",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "conv_index_cpa",
+		"name": "转化目标成本(元)",
+		"desc": "广告产生一次转化目标的平均费用。计算逻辑：广告花费/转化目标量。\r\n\r\n不同类型广告，「转化目标」的定义不同，点击查看<a href=\"https://ad.weixin.qq.com/guide/1230\" target=\"_blank\">映射表</a>\r\n\r\n该指标于19/8/30升级发布，覆盖了更多类型的广告",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "conv_index_cvr",
+		"name": "目标转化率",
+		"desc": "朋友圈：转化目标量/可转化点击次数。\r\n公众号：转化目标量/点击次数。\r\n\r\n该指标于19/8/30升级发布，覆盖了更多类型的广告",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "second_comindex_name",
+		"name": "深度转化目标-灰度中",
+		"desc": "根据您选择的深度智能优化目标，该广告对应的转化指标，随深度转化功能灰度中。\r\n\r\n部分需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "ad_group"
+	},
+	{
+		"db_name": "second_ocpm_comindex",
+		"name": "深度转化目标量-灰度中",
+		"desc": "（指标随深度转化功能灰度中）\r\n\r\n根据您选择的深度智能优化目标，该广告对应的具体数量。前往查看<a href=\"https://ad.weixin.qq.com/guide/117\" target=\"_blank\">详细对应关系</a>\r\n部分需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "second_ocpm_cpa",
+		"name": "深度转化目标成本(元)-灰度中",
+		"desc": "（指标随深度转化功能灰度中）\r\n\r\n根据您选择的深度智能优化目标，该广告产生一次转化的平均费用。计算逻辑：广告花费/深度转化目标量\r\n\r\n部分需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "second_ocpm_cvr",
+		"name": "深度目标转化率-灰度中",
+		"desc": "朋友圈：深度转化目标量/可转化点击次数。\r\n公众号：深度转化目标量/点击次数。\r\n指标随深度转化功能灰度中。接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "view_app_page_pv",
+		"name": "关键页面访问次数",
+		"desc": "用户点击广告原生落地页的APP跳转按钮，并到达APP内关键页面的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "view_app_page_dedup_pv",
+		"name": "关键页面访问人数",
+		"desc": "点击广告原生落地页的APP跳转按钮，并到达APP内关键页面的独立用户数。\r\n\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "view_app_page_dedup_cost",
+		"name": "关键页面访问成本（人数）",
+		"desc": "产生一个关键页面访问用户的平均花费。计算逻辑：广告花费/关键页面访问人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "download_complete_pv",
+		"name": "APP下载完成次数",
+		"desc": "用户通过广告下载APP并下载完成的次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "download_complete_pv_cost",
+		"name": "APP下载完成成本（元）",
+		"desc": "产生一次APP下载完成的平均花费。计算逻辑：广告花费/APP下载完成次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "install_complete_pv",
+		"name": "APP安装完成次数",
+		"desc": "用户通过广告下载APP并安装完成的次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "install_complete_rate",
+		"name": "APP安装完成率",
+		"desc": "一次点击到APP安装完成的转化率",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "install_complete_pv_cost",
+		"name": "APP安装完成成本（元）",
+		"desc": "产生一次APP安装完成的平均花费。计算逻辑：广告花费/APP安装完成次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_act_pv",
+		"name": "APP激活次数",
+		"desc": "用户通过广告下载APP并安装完成后，在联网环境下完成激活（指首次打开APP）的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{ "db_name": "app_act_rate", "name": "APP激活率", "desc": "一次点击到APP激活的转化率", "ad_level": "all" },
+	{
+		"db_name": "app_act_pv_cost",
+		"name": "APP激活成本（元）",
+		"desc": "产生一次APP激活的平均花费。计算逻辑：广告花费/APP激活次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_reg_pv",
+		"name": "APP注册次数",
+		"desc": "用户通过广告下载APP并安装完成后，在联网环境下完成激活后注册的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_reg_pv_cost",
+		"name": "APP注册成本（元）",
+		"desc": "产生一次APP注册的平均花费。计算逻辑：广告花费/APP注册次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_addtocart_pv",
+		"name": "APP加入购物车次数",
+		"desc": "用户通过广告下载APP并安装完成并激活后，在APP内发起购买而未完成付费的行为次数，如加入购物车、下单。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "membership_purchase_pv",
+		"name": "APP购买会员次数",
+		"desc": "用户通过广告下载APP安装完成并激活后，在APP内购买会员的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "membership_purchase_first_pv",
+		"name": "APP首次购买会员人数",
+		"desc": "30天内在APP内首次购买会员的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "membership_purchase_first_pv_cost",
+		"name": "APP首次购买会员成本（元）",
+		"desc": "产生一个APP内首次购买会员用户的平均花费。计算逻辑：广告花费/APP首次购买会员人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "membership_purchase_first_pv_rate",
+		"name": "APP首次购买会员率",
+		"desc": "一次点击到产生一个在APP内首次购买会员的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_purchase_pv",
+		"name": "APP付费次数",
+		"desc": "用户通过广告下载APP并安装完成并激活后，在APP内进行付费的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_purchase_amount",
+		"name": "APP付费金额（元）",
+		"desc": "用户通过广告下载APP并安装完成激活后，在APP 内进行付费的金额。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_purchase_first_pv",
+		"name": "APP首次付费人数",
+		"desc": "30天内在APP内进行首次付费的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_purchase_first_cost",
+		"name": "APP首次付费成本（元）",
+		"desc": "产生一个首次付费用户的平均花费。计算逻辑：广告花费/APP首次付费人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_purchase_firstday_amount_roi",
+		"name": "APP首日新增收入ROI",
+		"desc": "APP首日付费金额/首日广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "start_app_pv",
+		"name": "APP次留人数",
+		"desc": "用户通过广告下载APP完成激活，次日再次打开APP的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "start_app_cost",
+		"name": "APP次留成本（元）",
+		"desc": "产生一个APP次留人数的平均花费。计算逻辑：广告花费/APP次留人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_withdraw_deposits_pv",
+		"name": "APP提现次数",
+		"desc": "用户在APP内完成提现的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_withdraw_deposits_dedup_pv",
+		"name": "APP内提现人数",
+		"desc": "在APP内完成提现的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_page_apply_pv",
+		"name": "APP进件次数",
+		"desc": "用户在APP内完整提交贷款申请资料的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_page_apply_dedup_pv",
+		"name": "APP进件人数",
+		"desc": "在APP内完整提交贷款申请资料的独立用户数。\r\n\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_page_apply_dedup_cost",
+		"name": "APP进件成本（人数）",
+		"desc": "产生一个APP进件用户的平均花费。计算逻辑：广告花费/APP进件人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_pre_credit_pv",
+		"name": "APP预授信次数",
+		"desc": "用户在APP内完整提交贷款申请资料，通过放款方的资质审核，但暂未通过身份验证的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_pre_credit_dedup_pv",
+		"name": "APP预授信人数",
+		"desc": "在APP内完整提交贷款申请资料，通过放款方的资质审核，但暂未通过身份验证的独立用户数。\r\n\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_pre_credit_dedup_cost",
+		"name": "APP预授信成本（人数）",
+		"desc": "产生一个APP预授信用户的平均花费。计算逻辑：广告花费/APP预授信人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_credit_pv",
+		"name": "APP授信次数",
+		"desc": "用户在APP内完整提交贷款申请资料，通过放款方的资质审核和身份验证的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_credit_dedup_pv",
+		"name": "APP授信人数",
+		"desc": "在APP内完整提交贷款申请资料，通过放款方的资质审核和身份验证的独立用户数。\r\n\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_credit_dedup_cost",
+		"name": "APP授信成本（人数）",
+		"desc": "产生一个APP授信用户的平均花费。计算逻辑：广告花费/APP授信人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_page_apply_dedup_rate",
+		"name": "APP进件转化率（人数）",
+		"desc": "一次点击到产生一个在APP内完成进件的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_pre_credit_dedup_rate",
+		"name": "APP预授信转化率（人数）",
+		"desc": "一次点击到产生一个在APP内完成预授信的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "app_credit_dedup_rate",
+		"name": "APP授信转化率（人数）",
+		"desc": "一次点击到产生一个在APP内完成授信的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_start_app_pv",
+		"name": "APP次留人数（激活口径）",
+		"desc": "用户通过广告下载APP完成激活，次日再次打开APP的独立用户数。注：该指标将把次留人数展示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\"\" target=\"\"_blank\"\">前往查看</a>\"",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_app_purchase_pv",
+		"name": "APP付费次数（激活口径）",
+		"desc": "用户通过广告下载APP并安装完成并激活后，在APP内进行付费的次数。注：该指标将把付费次数展示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\"\" target=\"\"_blank\"\">前往查看</a>\"",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_app_purchase_amount",
+		"name": "APP付费金额（激活口径）",
+		"desc": "用户通过广告下载APP并安装完成激活后，在APP 内进行付费的金额。注：该指标将把付费金额展示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_app_purchase_first_pv",
+		"name": "APP首次付费人数（激活口径）",
+		"desc": "30天内在APP内进行首次付费的独立用户数。注：该指标将把首次付费人数展示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_app_purchase_firstday_pv",
+		"name": "APP首日付费次数（激活口径）",
+		"desc": "广告推广获取的用户，点击广告当日，带来的APP付费次数。注：该指标将把首日付费次数展示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\"\" target=\"\"_blank\"\">前往查看</a>\"",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_app_purchase_firstday_uv",
+		"name": "APP首日付费人数（激活口径）",
+		"desc": "广告推广获取的用户，点击广告当日，带来的APP付费人数。注：该指标将把首日付费人数展示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_app_purchase_firstday_amount",
+		"name": "APP首日付费金额（激活口径）",
+		"desc": "广告推广获取的用户，点击广告当日，带来的APP付费金额。注：该指标将把首日付费金额展示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\"\" target=\"\"_blank\"\">前往查看</a>\"",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "activate_time_app_purchase_firstday_amount_roi",
+		"name": "APP首日付费ROI（激活口径）",
+		"desc": "App首日付费金额（激活口径）/广告花费。注：该指标将把首日付费ROI示在APP激活时间。\r\n接入转化跟踪后可统计 <a href=\"\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\"\" target=\"\"_blank\"\">前往查看</a>\"",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_addtocart_pv",
+		"name": "网页加购物车次数",
+		"desc": "用户在网页内将广告主商品加入购物车的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_consult_dedup_pv",
+		"name": "网页咨询人数",
+		"desc": "点击页面内在线咨询按钮有实际咨询的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_pv",
+		"name": "下单量",
+		"desc": "用户通过该广告进行商品成交（如下单提交、在线支付）的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_first_day_pv",
+		"name": "首日新增下单量",
+		"desc": "广告推广获取的用户，点击广告当日，带来的下单次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_all_pv",
+		"name": "综合下单次数",
+		"desc": "用户通过该广告在网页、APP、公众号等进行商品成交（如下单提交、在线支付）的次数。注：该指标包含现投放端指标“下单量”和“公众号内下单次数”。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{ "db_name": "order_cost", "name": "下单成本（次数）", "desc": "产生一次下单的成本", "ad_level": "all" },
+	{ "db_name": "order_rate", "name": "下单率", "desc": "一次点击到下单的转化率", "ad_level": "all" },
+	{
+		"db_name": "order_amount",
+		"name": "下单金额",
+		"desc": "广告带来的总订单金额（即销售额）。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_first_day_amount",
+		"name": "首日新增下单金额",
+		"desc": "广告推广获取的用户，点击广告当日，带来的总订单金额（即销售额）。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_all_amount",
+		"name": "综合下单金额",
+		"desc": "广告带来的综合下单金额（即销售额）。注：该指标包含现投放端指标“下单金额”和“公众号内下单金额”。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_pct",
+		"name": "下单客单价",
+		"desc": "下单金额/下单量。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_all_arpu",
+		"name": "综合下单客单价",
+		"desc": "综合下单金额/综合下单次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_roi",
+		"name": "下单ROI",
+		"desc": "下单金额/广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_all_roi",
+		"name": "综合下单ROI",
+		"desc": "综合下单金额/广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_first_day_amount_roi",
+		"name": "首日新增下单ROI",
+		"desc": "首日新增下单金额/首日广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "deliver_pv",
+		"name": "订单发货次数",
+		"desc": "订单状态标记为发货的订单数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "sign_in_dedup_pv",
+		"name": "签收次数",
+		"desc": "签收从广告主处购买的商品的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "sign_in_amount",
+		"name": "签收金额",
+		"desc": "广告带来的总签收金额。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "sign_in_roi",
+		"name": "签收ROI",
+		"desc": "签收金额/广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "sign_in_rate",
+		"name": "签收率",
+		"desc": "签收次数/下单量。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "add_to_wishlist_pv",
+		"name": "加收藏次数",
+		"desc": "用户将广告主商品加入收藏的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "view_commodity_page_pv",
+		"name": "商品详情页浏览次数",
+		"desc": "用户浏览广告主商品详情页的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "view_commodity_page_dedup_pv",
+		"name": "商品详情页浏览人数",
+		"desc": "浏览广告主商品详情页的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_membership_purchase_pv",
+		"name": "购买会员次数",
+		"desc": "用户通过广告在网页或小程序内购买会员的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_membership_purchase_first_pv",
+		"name": "首次购买会员人数",
+		"desc": "30天内在网页或小程序内首次购买会员的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_membership_purchase_first_rate",
+		"name": "首次购买会员率",
+		"desc": "一次点击到产生一个在网页或小程序内首次购买会员的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_membership_purchase_first_cost",
+		"name": "首次购买会员成本（元）",
+		"desc": "产生一个在网页或小程序内首次购买会员用户的平均花费。计算逻辑：广告花费/首次购买会员人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "quest_reservation_pv",
+		"name": "销售线索次数",
+		"desc": "广告带来的用户销售线索数量。\r\nH5推广需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "quest_reservation_pv_cost",
+		"name": "销售线索成本（次数）",
+		"desc": "提交一个销售线索的成本",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "quest_reservation_pv_rate",
+		"name": "销售线索转化率（次数）",
+		"desc": "一次点击到提交一个销售线索的转化率",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "quest_reservation_uv",
+		"name": "销售线索人数",
+		"desc": "广告带来的用户销售线索数量按用户去重，同一个用户多次提交仅计算一次。\r\nH5推广需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "quest_reservation_uv_cost",
+		"name": "销售线索成本（人数）",
+		"desc": "提交一个销售线索用户的成本",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "quest_reservation_uv_rate",
+		"name": "销售线索转化率（人数）",
+		"desc": "一次点击到产生一个销售线索用户的转化率",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_leads_pv",
+		"name": "有效销售线索量",
+		"desc": "广告主回拨后确认为有效线索的数量按用户去重，同一个用户多次提交仅计算一次。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_leads_cost",
+		"name": "有效销售线索成本（元）",
+		"desc": "产生一个有效销售线索的平均花费。计算逻辑：广告花费/有效销售线索量\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_leads_rate",
+		"name": "有效销售线索转化率",
+		"desc": "一次点击到产生一个提交了有效销售线索用户的转化率",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "multiple_leads_all_dedup_pv",
+		"name": "综合线索收集人数",
+		"desc": "广告带来的综合销售线索数量按用户去重，同一个用户多次提交仅计算一次。综合销售线索包括表单预约、电话拨打、在线咨询和加企业微信客服。\r\nH5推广需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "multiple_valid_leads_all_dedup_pv",
+		"name": "有效综合线索人数",
+		"desc": "广告主确认为有效综合线索的数量按用户去重，同一个用户多次提交仅计算一次。有效综合销售线索包括有效表单预约、 有效在线咨询和有效电话拨打。\r\nH5推广需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "leads_purchase_first_pv",
+		"name": "首次付费人数",
+		"desc": "广告带来的有付费行为的销售线索数量按用户去重，同一个用户多次提交仅计算一次（原付费销售线索人数）。\r\nH5推广需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "leads_purchase_first_cost",
+		"name": "首次付费成本（人数）",
+		"desc": "产生一个首次付费用户的成本（原付费销售线索成本）。\r\nH5推广需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "leads_purchase_first_rate",
+		"name": "首次付费转化率（人数）",
+		"desc": "一次点击到产生一个首次付费用户的转化率（原付费销售线索转化率）。\r\nH5推广需接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "online_consult_dedup_pv",
+		"name": "在线咨询人数",
+		"desc": "点击在线咨询按钮有实际咨询的独立用户数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "online_valid_consult_dedup_pv",
+		"name": "有效在线咨询人数",
+		"desc": "广告主在云智服营销后台确认为有效咨询的独立用户数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "phone_call_dedup_pv",
+		"name": "电话拨打人数",
+		"desc": "通过高级电话组件打出电话的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_phone_dedup_pv",
+		"name": "有效电话拨打人数",
+		"desc": "点击智能电话组件确认外呼后，符合以下两种情况至少其一的独立用户数：①电话接通且通话时长≥10s；②广告主在线索管理平台手动标记为潜在客户、高意向客户或已成单。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "potential_customer_phone_dedup_pv",
+		"name": "电话潜在客户人数",
+		"desc": "点击智能电话组件确认外呼后，广告主在线索管理平台手动标记为潜在客户、高意向客户或已成单的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "page_register_pv",
+		"name": "网页注册次数",
+		"desc": "用户在网页内完成注册的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "page_register_dedup_pv",
+		"name": "网页注册人数",
+		"desc": "在网页内完成注册的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_page_apply_pv",
+		"name": "网页进件次数",
+		"desc": "用户在网页内完整提交贷款申请资料的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_page_apply_dedup_pv",
+		"name": "网页进件人数",
+		"desc": "在网页内完整提交贷款申请资料的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_page_apply_dedup_cost",
+		"name": "网页进件成本（人数）",
+		"desc": "产生一个网页进件用户的平均花费。计算逻辑：广告花费/网页进件人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_page_apply_dedup_rate",
+		"name": "网页进件转化率（人数）",
+		"desc": "一次点击到产生一个在网页内完成进件的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_credit_pv",
+		"name": "网页授信次数",
+		"desc": "用户在网页内完整提交贷款申请资料，通过放款方的资质审核和身份验证的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_credit_dedup_pv",
+		"name": "网页授信人数",
+		"desc": "在网页内完整提交贷款申请资料，通过放款方的资质审核和身份验证的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_credit_dedup_cost",
+		"name": "网页授信成本（人数）",
+		"desc": "产生一个网页授信用户的平均花费。计算逻辑：广告花费/网页授信人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_credit_dedup_rate",
+		"name": "网页授信转化率（人数）",
+		"desc": "一次点击到产生一个在网页内完成授信的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_pre_credit_pv",
+		"name": "网页预授信次数",
+		"desc": "用户在网页内完整提交贷款申请资料，通过放款方的资质审核，但暂未通过身份验证的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_withdraw_deposits_pv",
+		"name": "网页提现次数",
+		"desc": "用户在网页内完成提现的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_withdraw_deposits_dedup_pv",
+		"name": "网页提现人数",
+		"desc": "在网页内完成提现的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_withdraw_deposits_dedup_cost",
+		"name": "网页提现成本（人数）",
+		"desc": "产生一个网页提现用户的平均花费。计算逻辑：广告花费/网页提现人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "web_withdraw_deposits_dedup_rate",
+		"name": "网页提现转化率（人数）",
+		"desc": "一次点击到产生一个在网页内完成提现的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "leads_purchase_pv",
+		"name": "网页付费次数",
+		"desc": "广告带来的用户在网页内进行付费的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "add_wechat_work_staff_dedup_pv",
+		"name": "加企业微信客服人数",
+		"desc": "添加企业微信好友成功的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "add_wechat_work_staff_dedup_cost",
+		"name": "加企业微信好友成本",
+		"desc": "产生一个加企业微信好友用户的平均花费。计算逻辑：广告花费/加企业微信好友人数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_reg_pv",
+		"name": "小游戏注册人数",
+		"desc": "通过广告首次登录小游戏的独立用户数。\r\n（19/7/20日-0点之后，该指标数据源已切换为平台数据，不再需要通过api回传数据。20号之前的数据，依然为客户自主回传的数据）。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_reg_cost",
+		"name": "小游戏注册成本（人数）",
+		"desc": "产生一个小游戏注册人数的成本",
+		"ad_level": "all"
+	},
+	{ "db_name": "weapp_reg_rate", "name": "小游戏注册率", "desc": "一次点击到小游戏注册的转化率", "ad_level": "all" },
+	{
+		"db_name": "minigame_realization_roi_first_pv",
+		"name": "广告变现人数",
+		"desc": "30天内在广告主自有的流量场景内，观看或点击广告为广告主带来广告收入分成的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "income_from_minigame_reg_arpu",
+		"name": "首日新增广告ARPU",
+		"desc": "广告带来的注册用户，在注册当日，产生的平均广告变现收入。注：该指标天更新，可以查看昨天及以前的数据",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_start_pv",
+		"name": "小游戏次留人数",
+		"desc": "通过广告首次登录小游戏，并在第二天再次登录的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://ad.weixin.qq.com/guide/455\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_purchase_pv",
+		"name": "小游戏付费次数",
+		"desc": "通过广告进入小游戏并完成付费的次数。\r\n接入转化跟踪后可统计 <a href=\"https://ad.weixin.qq.com/guide/455\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_purchase_amount",
+		"name": "小游戏付费金额（元）",
+		"desc": "通过广告进入小游戏并完成付费的金额。\r\n接入转化跟踪后可统计 <a href=\"https://ad.weixin.qq.com/guide/455\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_purchase_firstday_pv",
+		"name": "小游戏首日付费人数",
+		"desc": "广告推广获取的用户，在注册小游戏当日完成付费的人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_purchase_firstday_amount",
+		"name": "小游戏首日付费金额",
+		"desc": "广告推广获取的用户，在注册小游戏当日完成付费的金额。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_purchase_amount_roi",
+		"name": "小游戏首日新增收入ROI",
+		"desc": "小游戏首日付费金额/首日广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "weapp_purchase_all_dedup_pv",
+		"name": "小游戏首次付费人数",
+		"desc": "30天内在小游戏内进行首次付费的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wegame_register_long_stay_pv",
+		"name": "停留大于30s人数",
+		"desc": "小游戏停留超过30s的注册用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wegame_register_long_stay_cost",
+		"name": "停留大于30s成本",
+		"desc": "产生一个小游戏停留超过30s的注册用户的平均花费。计算逻辑：广告花费/停留大于30s人数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "follow_pv",
+		"name": "公众号关注次数",
+		"desc": "用户通过广告关注公众号成功的次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "follow_cost",
+		"name": "公众号关注成本（次数）",
+		"desc": "产生一次公众号关注的成本",
+		"ad_level": "all"
+	},
+	{ "db_name": "follow_rate", "name": "公众号关注率", "desc": "一次点击到公众号关注的转化率", "ad_level": "all" },
+	{
+		"db_name": "reg_att_pv",
+		"name": "公众号内注册人数",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的注册行为的人数（UV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reg_att_rate",
+		"name": "公众号内注册比例",
+		"desc": "公众号内注册独立用户数（UV）/公众号关注次数。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reg_att_cost",
+		"name": "公众号内注册成本（元）",
+		"desc": "广告花费/广告产生的注册行为数量（PV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reg_att_value",
+		"name": "公众号内注册订单金额（元）",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的订单行为的订单金额（即销售额）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reg_att_roi",
+		"name": "公众号内注册ROI",
+		"desc": "注册产生的订单金额累计/广告花费。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reservation_att_pv",
+		"name": "公众号内填单次数",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的填单行为的数量（PV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reservation_att_uv",
+		"name": "公众号内填单人数",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的填单行为的独立用户数（UV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reservation_att_rate",
+		"name": "公众号内填单比例",
+		"desc": "公众号内填单的独立用户数（UV）/公众号关注次数。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reservation_att_cost",
+		"name": "公众号内填单成本（元）",
+		"desc": "广告花费/广告产生的填单行为数量（PV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reservation_att_value",
+		"name": "公众号内填单金额（元）",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的填单行为的订单金额（即销售额）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放) <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reservation_att_roi",
+		"name": "公众号内填单ROI",
+		"desc": "填单产生的订单金额累计/广告花费。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_att_pv",
+		"name": "公众号内下单次数",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的下单行为的数量（PV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_first_day_att_pv",
+		"name": "首日公众号内下单次数",
+		"desc": "广告推广获取的用户，在关注公众号当日，在公众号内部产生了广告主定义的下单行为数量（PV）。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_att_uv",
+		"name": "公众号内下单人数",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的下单行为的独立用户数（UV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_att_rate",
+		"name": "公众号内下单比例",
+		"desc": "公众号内下单独立用户数（UV）/公众号关注次数。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_att_cost",
+		"name": "公众号内下单成本（元）",
+		"desc": "广告花费/广告产生的下单行为数量（PV）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_att_value",
+		"name": "公众号内下单金额（元）",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生了广告主定义的下单行为的订单金额（即销售额）。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_first_day_att_value",
+		"name": "首日公众号内下单金额（元）",
+		"desc": "广告推广获取的用户，在关注公众号当日，在公众号内部产生了广告主定义的下单行为订单金额（即销售额）。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "order_att_roi",
+		"name": "公众号内下单ROI",
+		"desc": "下单产生的订单金额累计/广告花费。\r\n接入转化跟踪后可统计(公众号接入暂未全量开放)  <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_purchase_pv",
+		"name": "公众号内付费次数",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生的付费行为的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_purchase_amount",
+		"name": "公众号内付费金额",
+		"desc": "用户通过关注类广告关注公众号后，在公众号内部产生的付费行为的金额。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_purchase_amount_roi",
+		"name": "公众号内付费ROI",
+		"desc": "公众号内付费金额/广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_purchase_firstday_pv",
+		"name": "公众号内首日付费次数",
+		"desc": "广告推广获取的用户，在关注公众号当日，在公众号内部产生的付费行为的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_purchase_firstday_amount",
+		"name": "公众号内首日付费金额",
+		"desc": "广告推广获取的用户，在关注公众号当日，在公众号内部产生的付费行为的金额。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_purchase_firstday_amount_roi",
+		"name": "公众号内首日付费ROI",
+		"desc": "公众号内首日付费金额/首日广告花费。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "consult_att_pv",
+		"name": "公众号内发消息人数",
+		"desc": "用户关注公众号后，在公众号对话框内发送消息的独立用户数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "reading_att_pv",
+		"name": "阅读粉丝量",
+		"desc": "近3日新增的粉丝中产生阅读行为的用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_page_apply_pv",
+		"name": "公众号内进件次数",
+		"desc": "用户在公众号内完整提交贷款申请资料的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_page_apply_dedup_pv",
+		"name": "公众号内进件人数",
+		"desc": "在公众号内完整提交贷款申请资料的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_page_apply_dedup_cost",
+		"name": "公众号内进件成本（人数）",
+		"desc": "产生一个公众号内进件用户的平均花费。计算逻辑：广告花费/公众号内进件人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_page_apply_dedup_rate",
+		"name": "公众号内进件转化率（人数）",
+		"desc": "一次点击到产生一个在公众号内完成进件的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_credit_pv",
+		"name": "公众号内授信次数",
+		"desc": "用户在公众号内完整提交贷款申请资料，并通过放款方的资质审核的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_credit_dedup_pv",
+		"name": "公众号内授信人数",
+		"desc": "在公众号内完整提交贷款申请资料，并通过放款方的资质审核的独立用户数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_credit_dedup_cost",
+		"name": "公众号内授信成本（人数）",
+		"desc": "产生一个公众号内授信用户的平均花费。计算逻辑：广告花费/公众号内授信人数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_credit_dedup_rate",
+		"name": "公众号内授信转化率（人数）",
+		"desc": "一次点击到产生一个在公众号内完成授信的独立用户的转化率。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "wechat_withdraw_deposits_pv",
+		"name": "公众号内提现次数",
+		"desc": "用户在公众号内完成提现的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{ "db_name": "card_get_pv", "name": "卡券领取次数", "desc": "用户通过广告领取卡券成功的次数。", "ad_level": "all" },
+	{ "db_name": "card_get_cost", "name": "卡券领取成本（次数）", "desc": "产生一次卡券领取的成本", "ad_level": "all" },
+	{ "db_name": "card_get_rate", "name": "卡券领取率", "desc": "一次点击到卡券领取的转化率", "ad_level": "all" },
+	{
+		"db_name": "card_use_pv",
+		"name": "卡券使用次数",
+		"desc": "用户通过广告领取卡券后，使用卡券的次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "promotion_claim_offer_pv",
+		"name": "自定义卡券领取次数",
+		"desc": "用户领取广告主自主设定的卡券的次数。\r\n接入转化跟踪后可统计 <a href=\"https://mp.weixin.qq.com/cgi-bin/frame?t=ad_system/common_frame&t1=manager/conversion_3&token={token}\" target=\"_blank\">前往查看</a>",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "share_page_pv",
+		"name": "广告分享次数",
+		"desc": "用户将广告落地页分享给好友和朋友圈的次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "share_page_uv",
+		"name": "广告分享人数",
+		"desc": "将广告落地页分享给好友和朋友圈的独立用户数。",
+		"ad_level": "all"
+	},
+	{ "db_name": "nointerest_pv", "name": "不感兴趣点击次数", "desc": "用户点击“不感兴趣”的次数。", "ad_level": "all" },
+	{
+		"db_name": "play_outer_pv",
+		"name": "朋友圈外层视频播放次数",
+		"desc": "用户播放朋友圈广告外层\"视频\"的总次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "play_outer_uv",
+		"name": "朋友圈外层视频播放人数",
+		"desc": "播放朋友圈广告外层\"视频\"的独立用户数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_time_avg",
+		"name": "平均播放时长",
+		"desc": "用户播放广告外层视频的平均时长。计算逻辑：视频播放总时长/外层视频播放次数。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_avg_time",
+		"name": "平均播放进度",
+		"desc": "用户播放广告外层视频的平均进度。计算逻辑：视频播放总时长/（外层视频播放次数*视频时长）",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_10_percent_pv",
+		"name": "10%进度播放量",
+		"desc": "播放进度大于等于10%的外层视频播放次数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_25_percent_pv",
+		"name": "25%进度播放量",
+		"desc": "播放进度大于等于25%的外层视频播放次数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_50_percent_pv",
+		"name": "50%进度播放量",
+		"desc": "播放进度大于等于50%的外层视频播放次数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_75_percent_pv",
+		"name": "75%进度播放量",
+		"desc": "播放进度大于等于75%的外层视频播放次数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_95_percent_pv",
+		"name": "95%进度播放量",
+		"desc": "播放进度大于等于95%的外层视频播放次数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_100_percent_pv",
+		"name": "100%进度播放量",
+		"desc": "播放进度大于等于100%的外层视频播放次数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_rate",
+		"name": "播放率",
+		"desc": "外层视频播放次数/曝光数，因一次曝光中，用户可能反复多次观看广告视频，因此该指标有可能大于1",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "valid_play_s_a_cost",
+		"name": "播放成本",
+		"desc": "产生一次外层视频播放的平均花费。计算逻辑：广告花费/外层视频播放次数",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "play_inner_pv",
+		"name": "推广页视频播放次数",
+		"desc": "用户进入推广页后观看视频的总次数（不含H5）。",
+		"ad_level": "all"
+	},
+	{
+		"db_name": "play_inner_uv",
+		"name": "推广页视频播放人数",
+		"desc": "用户进入推广页后观看视频的独立用户数（不含H5）。",
+		"ad_level": "all"
+	}
+]
