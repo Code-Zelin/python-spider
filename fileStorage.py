@@ -9,7 +9,7 @@ GLOBAL_G_TK = 0
 # 设置缓存
 def setStorage(key, value):
     with open("./storage.json", "r") as load_f:
-        storage = json.load(load_f)
+        storage = json.load(load_f) or {}
     with open("./storage.json", "w") as dump_f:
         storage[key] = value
         # print(storage)

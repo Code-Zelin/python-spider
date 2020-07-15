@@ -18,23 +18,4 @@ def entry():
         client.getDeliveryMetrics()
 
 
-# entry()
-
-
-def transfromJson():
-    result = {}
-    with open("./index_classify_info.json", "r", encoding="utf-8") as read_f:
-        data = json.load(read_f)
-    for item in data:
-        for inner in item["indexList"]:
-            result[inner['db_name']] = {
-                "name": inner["index_name"],
-                "desc": inner["index_description"],
-                "ad_level": inner["for_ad_level"]
-            }
-
-    with open("./info.json", "w", encoding="utf-8") as write_f:
-        json.dump(result, write_f, ensure_ascii=False)
-
-
-transfromJson()
+entry()

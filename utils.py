@@ -47,14 +47,22 @@ def getTimeStampFromFewDaysAgo(days, isBegin=True):
     # 今天日期
     today = datetime.date.today()
     # 昨天时间 days = 1，前天 days-2
-    if isBegin == True:
-        yesterday = today - datetime.timedelta(days=days)
-        return int(time.mktime(time.strptime(str(yesterday), '%Y-%m-%d')))
-    else:
-        yesterday = today - datetime.timedelta(days=days-1)
-        return int(time.mktime(time.strptime(str(yesterday), '%Y-%m-%d'))) - 1
+    yesterday = today - datetime.timedelta(days=days)
+    return dateToTimeStamp(str(yesterday), '%Y-%m-%d', isBegin=isBegin)
 
 
 # 格式化cookie，从dict转化成数组，在转化成字符串
 def transfomrCookie(cookie):
     return arrJoinStr(transformObjToArr(cookie), "; ")
+
+
+# 用日期换取时间戳
+def dateToTimeStamp(date, temp="%Y%m%d", isBegin=True):
+    if not temp:
+        temp = "%Y%m%d"
+    timeArr = time.strptime(date, temp)
+    timeStamp = int(time.mktime(timeArr))
+    # 如果不是开始，则需要加一天，再减去一秒，得到当天的23:59:59
+    if isBegin != True:
+        timeStamp = timeStamp + 3600 * 24 - 1
+    return str(timeStamp)
