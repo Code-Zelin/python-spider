@@ -79,7 +79,7 @@ def openMpPage(url, appid, date, is_game):
     response = requests.get(url, headers={
         "Cookie": utils.transfomrCookie(fileStorage.GLOBAL_COOKIE)
     }, allow_redirects=False)
-    # print("mppage: ", response.url)
+    print("mppage: ", response.url)
     location = response.headers["Location"]
     _cookies = response.cookies.items()
     if len(_cookies) > 0:
