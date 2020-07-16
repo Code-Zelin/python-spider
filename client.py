@@ -8,6 +8,7 @@ import login
 import config
 import http
 import re
+import os
 from urllib.parse import quote
 
 
@@ -148,5 +149,7 @@ def getKeyDetailTable(appid, date=-1, is_game=1):
             "content-type": "application/json"
         })
         print("本地请求： ", res.text)
+        if os.path.isdir("./data") == False:
+            os.mkdir("data")
         with open("./data/" + appid + ".json", "w", encoding="utf-8") as f:
             json.dump(responseData, f, ensure_ascii=False)

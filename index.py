@@ -16,6 +16,14 @@ def entry():
         fileStorage.GLOBAL_G_TK = _g_tk
         fileStorage.GLOBAL_COOKIE = _cookies
         client.getDeliveryMetrics()
+    exitProgram()
+
+
+def exitProgram():
+    print("输入exit退出")
+    str = input()
+    if str == "exit":
+        print("再见")
 
 
 entry()

@@ -8,15 +8,24 @@ GLOBAL_G_TK = 0
 
 # 设置缓存
 def setStorage(key, value):
-    with open("./storage.json", "r") as load_f:
-        storage = json.load(load_f) or {}
+    storage = getStorage("") or {}
     with open("./storage.json", "w") as dump_f:
         storage[key] = value
         # print(storage)
         json.dump(storage, dump_f)
 
 # 读取缓存中的数据
+
+
 def getStorage(key):
-    with open("./storage.json", "r") as load_f:
-        storage = json.load(load_f)
-    return storage.get(key)
+    storage = {}
+    try:
+        with open("./storage.json", "r") as load_f:
+            storage = json.load(load_f)
+    except IOError:
+        print("Error: 没有找到文件或读取文件失败")
+    
+    if not key:
+        return storage
+    else:
+        return storage.get(key)
